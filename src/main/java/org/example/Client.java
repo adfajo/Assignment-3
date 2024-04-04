@@ -41,10 +41,6 @@ public class Client {
         return "Server replied: " + response;
     }
 
-    public String requestAverageWaitTime() {
-        return sendProcess("REQUEST_AVERAGE_WAIT_TIME");
-    }
-
     public static void main(String[] args) {
         Client client = new Client();
     }

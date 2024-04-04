@@ -1,38 +1,28 @@
 
-	java:S112a"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ûóìÇê1J$c15b9579-ff70-41e6-814b-e85fd8a6294e
+	java:S112a"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ûóìÇê1J$69366d16-db92-48a3-b205-64505a7a7eb5
 Œ
-java:S1192q"IDefine a constant instead of duplicating this literal "Process " 4 times.(‚é›ò8ûóìÇê1J$10c479f4-5271-47db-8a27-25535305a755
+java:S1192q"IDefine a constant instead of duplicating this literal "Process " 4 times.(‚é›ò8ûóìÇê1J$6f4046fd-5f0f-4987-8c77-30e01cae5b0d
 
-java:S1223 "LRename this method to prevent any misunderstanding or make it a constructor.(Î›’Ì8ıóìÇê1J$7f91c52c-b302-42fa-bf28-cc067316f1a7
-	java:S100 "NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î›’Ì8ËôìÇê1J$e2323be2-0ef4-423c-9041-ff81a05b009c
-m	java:S1061"+Replace this use of System.out by a logger.(ÆÒŠø8ÏôìÇê1J$ff3f61ae-bece-461f-953a-3d529c1cb43a
+java:S1223 "LRename this method to prevent any misunderstanding or make it a constructor.(Î›’Ì8ıóìÇê1J$c11a0b1e-18b9-4e8c-b3bc-f6404cf2c955
+	java:S100 "NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î›’Ì8ËôìÇê1J$e0dbc62f-ff83-4cd5-9481-b018abb6bad8
+m	java:S1061"+Replace this use of System.out by a logger.(ÆÒŠø8ÏôìÇê1J$062950fb-2d22-45b7-a520-7afeb19cba9f
 ¡
-java:S2142?"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8ĞôìÇê1J$2ef35ead-c02e-4adf-984e-44d28027c057
-m	java:S106J"+Replace this use of System.out by a logger.(¥†æ8ĞôìÇê1J$5792fe23-a0f2-4294-b626-a53f016f7184
+java:S2142?"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8ĞôìÇê1J$625bb781-ce3f-4881-8a8b-c608cc847c65
+m	java:S106J"+Replace this use of System.out by a logger.(¥†æ8ĞôìÇê1J$10550b76-3727-4e9c-a776-8fc0d2e2add4
 u
-java:S1135L"2Complete the task associated to this TODO comment.(¬€ßæ8ÑôìÇê1J$36340363-f41b-48a1-93e5-ad8b77939e61
+java:S1135L"2Complete the task associated to this TODO comment.(¬€ßæ8ÑôìÇê1J$63be3a0c-45e7-4990-870d-b4994dd1cccd
 u
-java:S1135Q"2Complete the task associated to this TODO comment.(¶‘”ë8ÑôìÇê1J$472af1fc-92b1-4489-8289-2e792af3273a
-m	java:S106`"+Replace this use of System.out by a logger.(¯—©‡8ÒôìÇê1J$6cc5b1ba-d13e-46f4-b766-571747ca0cd4
-m	java:S106q"+Replace this use of System.out by a logger.(‚é›ò8ÓôìÇê1J$f64962ba-5b64-4258-b74d-21f40362f00b
-r	java:S106t"+Replace this use of System.out by a logger.(óæ÷øøÿÿÿÿ8ÔôìÇê1J$83223d1c-acd8-47db-954f-33aac26609c9
-m	java:S106z"+Replace this use of System.out by a logger.(Ë„‡Ñ8ÔôìÇê1J$5461387f-02fc-4c47-a52b-dfca4d3eac5d
-r	java:S106}"+Replace this use of System.out by a logger.(Ç¬Ğ¨ÿÿÿÿÿ8ÖôìÇê1J$7df02e19-2587-414f-89e4-6c7eba374a7f
-n	java:S106–"+Replace this use of System.out by a logger.(ÆÀûı8ÖôìÇê1J$e15a081b-2e12-40d7-9264-323b73d485f3
-n	java:S106"+Replace this use of System.out by a logger.(ÆÀûı8×ôìÇê1J$2771227b-6f9b-4f6f-bc0a-b6f58498ec03
-n	java:S106£"+Replace this use of System.out by a logger.(Ë„‡Ñ8á·øÇê1J$43405424-d7fc-4c40-9149-46e5a5ff5dc3
-s	java:S106¦"+Replace this use of System.out by a logger.(Ç¬Ğ¨ÿÿÿÿÿ8äŠ†Èê1J$7b94d860-77f8-42c6-a2f0-be9debbe5e28
-v
-java:S1128"3Remove this unused import 'java.io.BufferedReader'.(€é²Å8ÙôìÇê1J$329843f2-7b76-4024-a861-f8238d99c59d
-y
-java:S1128"6Remove this unused import 'java.io.InputStreamReader'.(ãˆÎÉ8ÙôìÇê1J$5932ceb6-b7b9-461b-8f3c-7e2e798d6ea3
-s
-java:S1128"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ8ÙôìÇê1J$45b068b2-6438-4dcd-b682-90d4c6e6990b
-v
-java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8ÙôìÇê1J$03d84b50-fba1-455a-a1d4-29545460f7ee
-s
-java:S1128	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÙôìÇê1J$12aa1a67-d7d8-43f3-ad59-3e39d98511b8
+java:S1135Q"2Complete the task associated to this TODO comment.(¶‘”ë8ÑôìÇê1J$118cddd7-d4d9-4a5f-a889-3f043ac84ed2
+m	java:S106`"+Replace this use of System.out by a logger.(¯—©‡8ÒôìÇê1J$31437f35-9067-47dc-960b-c9ee38cf13d8
+m	java:S106q"+Replace this use of System.out by a logger.(‚é›ò8ÓôìÇê1J$49036877-91c4-4621-8c28-00fad1ebdb8c
+r	java:S106t"+Replace this use of System.out by a logger.(óæ÷øøÿÿÿÿ8ÔôìÇê1J$9ae82009-aae2-408b-902d-62798218d536
+m	java:S106z"+Replace this use of System.out by a logger.(Ë„‡Ñ8ÔôìÇê1J$f34b1d77-7a4c-4c2b-a9db-e089bc7a6a59
+r	java:S106}"+Replace this use of System.out by a logger.(Ç¬Ğ¨ÿÿÿÿÿ8ÖôìÇê1J$b5a58b81-42ef-4ee1-95dd-dbe908da2176
+n	java:S106–"+Replace this use of System.out by a logger.(ÆÀûı8ÖôìÇê1J$566db346-51d7-4b5e-b646-83ce5b254987
+n	java:S106"+Replace this use of System.out by a logger.(ÆÀûı8×ôìÇê1J$13e0f7b7-1e42-4f9e-8fb3-bc2a5a7e74e5
+n	java:S106£"+Replace this use of System.out by a logger.(Ë„‡Ñ8á·øÇê1J$13ac4e2f-7845-4a82-ad7e-622c59dd44ed
+s	java:S106¦"+Replace this use of System.out by a logger.(Ç¬Ğ¨ÿÿÿÿÿ8äŠ†Èê1J$6a1617e8-8a19-405e-a021-39d0f7c45391
 w
-java:S1068"4Remove this unused "totalElapsedTime" private field.(’äš8ÚôìÇê1J$7646a49c-55a9-4274-b222-8ffe4d3a25e7
+java:S1068"4Remove this unused "totalElapsedTime" private field.(’äš8ÚôìÇê1J$82cad511-a6d6-445a-a2bc-67fd5400af77
 w
-java:S1068"4Remove this unused "totalProcessTime" private field.(ÀÁ“ã8‹¸‰Èê1J$d1ecf5e9-c1fa-40ce-a660-758b0cc909b5
+java:S1068"4Remove this unused "totalProcessTime" private field.(ÀÁ“ã8‹¸‰Èê1J$8546a94b-5a69-4a27-bd9e-aa9f44b1eea2

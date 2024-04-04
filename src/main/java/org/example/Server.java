@@ -81,7 +81,7 @@ public class Server {
         //TODO: Fjern clients fra lista etterhvert
 
         // Add the client socket to the list and start a new thread to handle the client
-        clientSockets.add(clientHandler.handleClient(clientSocket, this));
+        clientSockets.add(clientHandler.handleClient(clientSocket));
 
         // Record the end time and calculate the elapsed time
         long endTime = System.currentTimeMillis();
@@ -175,4 +175,3 @@ public class Server {
     this.schedulingType = schedulingType;
   }
 }
-
