@@ -163,6 +163,11 @@ public class Server {
     }
   }
 
+  private double getAverageTurnaroundTime() {
+    return (double) totalTurnAroundTime / processCount;
+  }
+
+
   public double getAverageWaitingTime(){
     return (double) totalWaitingTime / processCount;
   }
