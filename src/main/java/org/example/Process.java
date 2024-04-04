@@ -1,5 +1,7 @@
 package org.example;
 
+import java.io.PrintWriter;
+
 /**
  * Class describing a process which includes an id, it´s
  * arrivalTime,
