@@ -33,9 +33,6 @@ public class Client {
             writer.flush();
             // Read the server's response
             response = reader.readLine();
-            // Send "exit" command to the server
-            writer.println("exit");
-            writer.flush();
         } catch (IOException e) {
             System.out.println("main.java.Client exception: " + e.getMessage());
             e.printStackTrace();

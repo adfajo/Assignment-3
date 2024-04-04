@@ -23,6 +23,7 @@ public class Server {
   private ArrayList<Process> clientSockets;
   private ExecutorService scheduler;
   private int currentTime;
+  private int schedulingType;
 
   //Constructor to initialize the server socket and client socket list
   public void Server(int port) {
@@ -30,6 +31,7 @@ public class Server {
       this.serverSocket = new ServerSocket(port);
       this.clientSockets = new ArrayList<>();
       this.scheduler = Executors.newSingleThreadExecutor();
+      this.schedulingType = 1;
       currentTime = 0;
     } catch (IOException e) {
       e.printStackTrace();
@@ -44,7 +46,11 @@ public class Server {
     // Priority scheduling in a separate thread to ensure constant running of method
     scheduler.submit(() -> {
       while (true) {
-        priorityScheduling();
+        if(this.schedulingType == 1){
+          priorityScheduling();
+        }else if(this.schedulingType == 2){
+          this.fifoScheduling();
+        }
         currentTime++;
         try {
           Thread.sleep(1000); // Sleep for 1 second (Simulation speed)
@@ -59,7 +65,7 @@ public class Server {
       try {
         // Accept a client connection
         Socket clientSocket = serverSocket.accept();
-        System.out.println("Client connected: " + clientSocket.getInetAddress());
+        System.out.println("Process added: " + clientSocket.getInetAddress());
 
         //TODO: Change this to a nanotime counter
 
@@ -76,14 +82,19 @@ public class Server {
         long elapsedTimeMs = endTime - startTime;
         totalElapsedTime += elapsedTimeMs;
         threadCount++;
-        System.out.println(
-            "Time to process " + threadCount + " threads: " + totalElapsedTime + " ms");
+
+        // Closing the connection to allow for further requests
+        clientSocket.close();
 
       } catch (IOException e) {
         System.out.println("Catch");
         throw new RuntimeException(e);
       }
     }
+  }
+
+  private void fifoScheduling() {
+
   }
 
   public static void main(String[] args) {
@@ -115,6 +126,10 @@ public class Server {
     } else {
       System.out.println("CPU is idle at time " + currentTime);
     }
+  }
+
+  public void setSchedulingType(int schedulingType){
+    this.schedulingType = schedulingType;
   }
 }
 
