@@ -1,10 +1,10 @@
 
-E	java:S106"+Replace this use of System.out by a logger.(ØÑŠ‰ùÿÿÿÿ
-E	java:S106"+Replace this use of System.out by a logger.(‘ÜÅûÿÿÿÿ
-E	java:S106%"+Replace this use of System.out by a logger.(‘ÜÅûÿÿÿÿ
-P
-java:S1854-":Remove this useless assignment to local variable "client".(·¶¢­
-A
-java:S1481-"+Remove this unused "client" local variable.(·¶¢­
-I
-java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ
+k	java:S106"+Replace this use of System.out by a logger.(ØÑŠ‰ùÿÿÿÿJ$165071da-668f-47d5-94f8-6682287d034a
+k	java:S106"+Replace this use of System.out by a logger.(‘ÜÅûÿÿÿÿJ$6672f9c5-b4f2-43b0-8eaa-bc9b676df137
+k	java:S106%"+Replace this use of System.out by a logger.(‘ÜÅûÿÿÿÿJ$ae789140-fce0-4d72-bd26-33e606658287
+v
+java:S18541":Remove this useless assignment to local variable "client".(·¶¢­J$7f2be753-06d0-4269-ae35-9bbb350790b1
+g
+java:S14811"+Remove this unused "client" local variable.(·¶¢­J$ac873cf6-8516-49ca-84bc-61ec52f8769a
+o
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿJ$b93a8c3a-1fd7-4e55-a69b-01c14b85d41c

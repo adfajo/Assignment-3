@@ -26,6 +26,7 @@ public class Server {
   private int schedulingType;
   private long totalProcessTime;
   private int processCount;
+  private long totalWaitingTime;
 
   //Constructor to initialize the server socket and client socket list
   public void Server(int port) {
@@ -36,7 +37,7 @@ public class Server {
       //Scheduling types:
       // 1 = Preemptive Priority Scheduling,
       // 2 = First Come First Serve.
-      this.schedulingType = 2;
+      this.schedulingType = 1;
       currentTime = 0;
     } catch (IOException e) {
       e.printStackTrace();
@@ -80,7 +81,7 @@ public class Server {
         //TODO: Fjern clients fra lista etterhvert
 
         // Add the client socket to the list and start a new thread to handle the client
-        clientSockets.add(clientHandler.handleClient(clientSocket));
+        clientSockets.add(clientHandler.handleClient(clientSocket, this));
 
         // Record the end time and calculate the elapsed time
         long endTime = System.currentTimeMillis();
@@ -116,6 +117,9 @@ public class Server {
           clientSockets.remove(runningProcess);
           totalProcessTime += currentTime - runningProcess.getArrivalTime();
           processCount++;
+
+          //Print the average waiting time
+          System.out.println("Average waiting time is: " + getAverageProcessTime());
         }
     } else{
         System.out.println("CPU is idle at time " + currentTime);
@@ -136,6 +140,7 @@ public class Server {
     for (Process process : clientSockets) {
       if (process.getArrivalTime() <= currentTime && process.getRemainingTime() > 0) {
         queue.add(process);
+        totalWaitingTime += currentTime;
       }
     }
 
@@ -145,6 +150,7 @@ public class Server {
       System.out.println(
           "Process " + runningProcess.getId() + " is running at time " + currentTime);
       runningProcess.setRemainingTime(runningProcess.getRemainingTime() - 1);
+      totalWaitingTime -= currentTime;
 
         // Remove the process if it is completed
       if (runningProcess.getRemainingTime() == 0) {
@@ -153,6 +159,8 @@ public class Server {
         clientSockets.remove(runningProcess);
         totalProcessTime += currentTime - runningProcess.getArrivalTime();
         processCount++;
+
+        System.out.println("Average waiting time is: " + getAverageProcessTime());
       }
     } else {
       System.out.println("CPU is idle at time " + currentTime);
@@ -160,7 +168,7 @@ public class Server {
   }
 
   public double getAverageProcessTime(){
-    return (double) totalProcessTime / processCount;
+    return (double) totalWaitingTime / processCount;
   }
 
   public void setSchedulingType(int schedulingType){
