@@ -1,0 +1,34 @@
+
+	java:S112`"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8õ§´Æê1J$e818cb83-8cd0-4d61-963f-39c6d9a92a76
+Œ
+java:S1192p"IDefine a constant instead of duplicating this literal "Process " 4 times.(‚é›ò8ö§´Æê1J$fc9bd384-094e-4bf2-97d5-d7b5c86cded5
+
+java:S1223"LRename this method to prevent any misunderstanding or make it a constructor.(Î›’Ì8÷§´Æê1J$e2d4c265-60aa-48ab-81ff-ab86fce1f979
+	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î›’Ì8°¨´Æê1J$0035c259-0415-468c-b45a-3b69d831b276
+m	java:S1060"+Replace this use of System.out by a logger.(ÆÒŠø8³¨´Æê1J$c855438b-5c0b-42c2-a619-4f2fba7cf945
+¡
+java:S2142>"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8´¨´Æê1J$9dd0bfe6-c995-4f0d-9c7c-8bce58b7b06f
+m	java:S106I"+Replace this use of System.out by a logger.(¥†æ8¶¨´Æê1J$db55ab41-5f95-4865-b9b0-e3c14306a39f
+u
+java:S1135K"2Complete the task associated to this TODO comment.(¬€ßæ8¶¨´Æê1J$57274913-faa3-41c5-923e-10c7574e82df
+u
+java:S1135P"2Complete the task associated to this TODO comment.(¶‘”ë8·¨´Æê1J$60cdaa0a-7c1f-4da0-b1e8-6b6664976c42
+m	java:S106_"+Replace this use of System.out by a logger.(¯—©‡8·¨´Æê1J$5e63ef29-b3d7-4150-bdc1-5057b61503f3
+m	java:S106p"+Replace this use of System.out by a logger.(‚é›ò8¸¨´Æê1J$fb41dbfe-ea88-4e5e-8c3b-5dfef0317001
+r	java:S106s"+Replace this use of System.out by a logger.(óæ÷øøÿÿÿÿ8¹¨´Æê1J$e348d96f-828e-4012-b773-2b355d112282
+r	java:S106y"+Replace this use of System.out by a logger.(Ç¬Ğ¨ÿÿÿÿÿ8»¨´Æê1J$70028096-aaa8-4dc1-8129-9e2c3382106c
+n	java:S106‘"+Replace this use of System.out by a logger.(ÆÀûı8»¨´Æê1J$192dc415-6c9f-4908-9f59-bc0e4c862c27
+n	java:S106—"+Replace this use of System.out by a logger.(ÆÀûı8»¨´Æê1J$f4b3ac9a-6375-4043-9dd0-c6c231f53021
+s	java:S106"+Replace this use of System.out by a logger.(Ç¬Ğ¨ÿÿÿÿÿ8ãó·Æê1J$43c4d409-c415-4b27-b6bf-d67fdfb59706
+v
+java:S1128"3Remove this unused import 'java.io.BufferedReader'.(€é²Å8ÛĞ’Çê1J$e4eb2262-d275-4f4f-bf82-5caa75a3c143
+y
+java:S1128"6Remove this unused import 'java.io.InputStreamReader'.(ãˆÎÉ8ÛĞ’Çê1J$20d9ab08-3979-4170-95d8-2e1e0465fd3a
+s
+java:S1128"0Remove this unused import 'java.io.PrintWriter'.(ÓŞÏÛ8ÜĞ’Çê1J$7ec35aed-d6fa-41bf-9316-acc90f3166f0
+v
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8ÜĞ’Çê1J$58f68225-810e-4300-a389-8f0d0faba894
+s
+java:S1128	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÜĞ’Çê1J$546ec6ed-bc7e-4f95-be9b-14134e8a35d9
+w
+java:S1068"4Remove this unused "totalElapsedTime" private field.(’äš8½¨´Æê1J$6d9a1868-2cb4-4b96-9697-058a51bb3aee

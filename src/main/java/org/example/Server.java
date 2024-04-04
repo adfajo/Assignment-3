@@ -24,6 +24,8 @@ public class Server {
   private ExecutorService scheduler;
   private int currentTime;
   private int schedulingType;
+  private long totalProcessTime;
+  private int processCount;
 
   //Constructor to initialize the server socket and client socket list
   public void Server(int port) {
@@ -31,6 +33,9 @@ public class Server {
       this.serverSocket = new ServerSocket(port);
       this.clientSockets = new ArrayList<>();
       this.scheduler = Executors.newSingleThreadExecutor();
+      //Scheduling types:
+      // 1 = Preemptive Priority Scheduling,
+      // 2 = First Come First Serve.
       this.schedulingType = 2;
       currentTime = 0;
     } catch (IOException e) {
@@ -109,6 +114,8 @@ public class Server {
         if(runningProcess.getRemainingTime() == 0){
           System.out.println("Process " + runningProcess.getId() + " completed at time " + (currentTime + 1));
           clientSockets.remove(runningProcess);
+          totalProcessTime += currentTime - runningProcess.getArrivalTime();
+          processCount++;
         }
     } else{
         System.out.println("CPU is idle at time " + currentTime);
@@ -122,28 +129,38 @@ public class Server {
   }
 
   public void priorityScheduling() {
+    // Priority queue to store the processes
     PriorityQueue<Process> queue = new PriorityQueue<>();
 
+    // Add the processes to the queue
     for (Process process : clientSockets) {
       if (process.getArrivalTime() <= currentTime && process.getRemainingTime() > 0) {
         queue.add(process);
       }
     }
 
+    // Run the process with the highest priority
     if (!queue.isEmpty()) {
       Process runningProcess = queue.poll();
       System.out.println(
           "Process " + runningProcess.getId() + " is running at time " + currentTime);
       runningProcess.setRemainingTime(runningProcess.getRemainingTime() - 1);
 
+        // Remove the process if it is completed
       if (runningProcess.getRemainingTime() == 0) {
         System.out.println(
             "Process " + runningProcess.getId() + " completed at time " + (currentTime + 1));
         clientSockets.remove(runningProcess);
+        totalProcessTime += currentTime - runningProcess.getArrivalTime();
+        processCount++;
       }
     } else {
       System.out.println("CPU is idle at time " + currentTime);
     }
+  }
+
+  public double getAverageProcessTime(){
+    return (double) totalProcessTime / processCount;
   }
 
   public void setSchedulingType(int schedulingType){
