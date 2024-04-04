@@ -31,7 +31,7 @@ public class Server {
       this.serverSocket = new ServerSocket(port);
       this.clientSockets = new ArrayList<>();
       this.scheduler = Executors.newSingleThreadExecutor();
-      this.schedulingType = 1;
+      this.schedulingType = 2;
       currentTime = 0;
     } catch (IOException e) {
       e.printStackTrace();
@@ -94,7 +94,25 @@ public class Server {
   }
 
   private void fifoScheduling() {
+    ArrayList<Process> queue = new ArrayList<>();
 
+    for(Process process : clientSockets){
+      if(process.getArrivalTime() <= currentTime && process.getRemainingTime() > 0) {
+        queue.add(process);
+      }
+    }
+
+    if(!queue.isEmpty()){
+      Process runningProcess = queue.get(0);
+        System.out.println("Process " + runningProcess.getId() + " is running at time " + currentTime);
+        runningProcess.setRemainingTime(runningProcess.getRemainingTime() - 1);
+        if(runningProcess.getRemainingTime() == 0){
+          System.out.println("Process " + runningProcess.getId() + " completed at time " + (currentTime + 1));
+          clientSockets.remove(runningProcess);
+        }
+    } else{
+        System.out.println("CPU is idle at time " + currentTime);
+    }
   }
 
   public static void main(String[] args) {
