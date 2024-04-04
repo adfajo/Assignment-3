@@ -17,7 +17,7 @@ public class ClientHandler {
     }
 
     // Method to handle the client requests
-    public Process handleClient(Socket clientSocket) {
+    public Process handleClient(Socket clientSocket,int arrivalTime) {
         try {
             // Create a reader and writer for the client socket
             BufferedReader reader =
@@ -34,7 +34,7 @@ public class ClientHandler {
                     int burstTime = Integer.parseInt(processParameters[1]);
                     int priority = Integer.parseInt(processParameters[2]);
 
-                    Process process = new Process(id,burstTime, priority);
+                    Process process = new Process(id,arrivalTime,burstTime, priority);
 
                     id++;
                     return process;

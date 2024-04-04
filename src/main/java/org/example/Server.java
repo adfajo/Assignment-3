@@ -1,12 +1,7 @@
 package org.example;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.*;
-import java.util.HashMap;
-import java.util.List;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.concurrent.ExecutorService;
@@ -24,7 +19,7 @@ public class Server {
   private ExecutorService scheduler;
   private int currentTime;
   private int schedulingType;
-  private long totalProcessTime;
+  private long totalTurnAroundTime;
   private int processCount;
   private long totalWaitingTime;
 
@@ -81,7 +76,7 @@ public class Server {
         //TODO: Fjern clients fra lista etterhvert
 
         // Add the client socket to the list and start a new thread to handle the client
-        clientSockets.add(clientHandler.handleClient(clientSocket));
+        clientSockets.add(clientHandler.handleClient(clientSocket,currentTime));
 
         // Record the end time and calculate the elapsed time
         long endTime = System.currentTimeMillis();
@@ -115,11 +110,11 @@ public class Server {
         if(runningProcess.getRemainingTime() == 0){
           System.out.println("Process " + runningProcess.getId() + " completed at time " + (currentTime + 1));
           clientSockets.remove(runningProcess);
-          totalProcessTime += currentTime - runningProcess.getArrivalTime();
+          totalTurnAroundTime += currentTime - runningProcess.getArrivalTime();
           processCount++;
 
           //Print the average waiting time
-          System.out.println("Average waiting time is: " + getAverageProcessTime());
+          System.out.println("Average waiting time is: " + getAverageWaitingTime());
         }
     } else{
         System.out.println("CPU is idle at time " + currentTime);
@@ -140,7 +135,6 @@ public class Server {
     for (Process process : clientSockets) {
       if (process.getArrivalTime() <= currentTime && process.getRemainingTime() > 0) {
         queue.add(process);
-        totalWaitingTime += currentTime;
       }
     }
 
@@ -150,24 +144,26 @@ public class Server {
       System.out.println(
           "Process " + runningProcess.getId() + " is running at time " + currentTime);
       runningProcess.setRemainingTime(runningProcess.getRemainingTime() - 1);
-      totalWaitingTime -= currentTime;
+      totalWaitingTime += clientSockets.size() - 1;
 
         // Remove the process if it is completed
       if (runningProcess.getRemainingTime() == 0) {
+        System.out.println("Arrival time: " + runningProcess.getArrivalTime() + " Finished time" + currentTime);
         System.out.println(
             "Process " + runningProcess.getId() + " completed at time " + (currentTime + 1));
         clientSockets.remove(runningProcess);
-        totalProcessTime += currentTime - runningProcess.getArrivalTime();
+        totalTurnAroundTime += (currentTime - runningProcess.getArrivalTime());
         processCount++;
 
-        System.out.println("Average waiting time is: " + getAverageProcessTime());
+        System.out.println("Average waiting time is: " + getAverageWaitingTime());
+        System.out.println("Average turnaround time is: " + getAverageTurnaroundTime());
       }
     } else {
       System.out.println("CPU is idle at time " + currentTime);
     }
   }
 
-  public double getAverageProcessTime(){
+  public double getAverageWaitingTime(){
     return (double) totalWaitingTime / processCount;
   }
 

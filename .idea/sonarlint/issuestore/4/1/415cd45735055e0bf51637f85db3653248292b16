@@ -1,5 +1,5 @@
 
-D
-java:S1121R".Extract the assignment out of this expression.(ìÆ‰ö
-t
-java:S1210V"YOverride "equals(Object obj)" to comply with the contract of the "compareTo(T o)" method.(”Ú‡äşÿÿÿÿ
+K
+java:S1121S".Extract the assignment out of this expression.(ìÆ‰ö8‰¤úÈê1
+{
+java:S1210["YOverride "equals(Object obj)" to comply with the contract of the "compareTo(T o)" method.(”Ú‡äşÿÿÿÿ8¤úÈê1

@@ -25,8 +25,9 @@ public class Process implements Comparable<Process> {
      * @param burstTime - Time to complete process
      * @param priority - Priority in a queue
      */
-    public Process(int id,int burstTime, int priority){
+    public Process(int id,int arrivalTime, int burstTime, int priority){
         this.id = id;
+        this.arrivalTime = arrivalTime;
         this.burstTime = burstTime;
         this.remainingTime = burstTime;
         this.priority = priority;
@@ -80,6 +81,10 @@ public class Process implements Comparable<Process> {
 
     public int setRemainingTime(int remainingTime){
         return this.remainingTime = remainingTime;
+    }
+
+    public void setArrivalTime(int arrivalTime){
+        this.arrivalTime = arrivalTime;
     }
 
     @Override

@@ -1,28 +1,30 @@
 
-	java:S112a"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ûóìÇê1J$69366d16-db92-48a3-b205-64505a7a7eb5
-Œ
-java:S1192q"IDefine a constant instead of duplicating this literal "Process " 4 times.(‚é›ò8ûóìÇê1J$6f4046fd-5f0f-4987-8c77-30e01cae5b0d
-
-java:S1223 "LRename this method to prevent any misunderstanding or make it a constructor.(Î›’Ì8ıóìÇê1J$c11a0b1e-18b9-4e8c-b3bc-f6404cf2c955
-	java:S100 "NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î›’Ì8ËôìÇê1J$e0dbc62f-ff83-4cd5-9481-b018abb6bad8
-m	java:S1061"+Replace this use of System.out by a logger.(ÆÒŠø8ÏôìÇê1J$062950fb-2d22-45b7-a520-7afeb19cba9f
-¡
-java:S2142?"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8ĞôìÇê1J$625bb781-ce3f-4881-8a8b-c608cc847c65
-m	java:S106J"+Replace this use of System.out by a logger.(¥†æ8ĞôìÇê1J$10550b76-3727-4e9c-a776-8fc0d2e2add4
-u
-java:S1135L"2Complete the task associated to this TODO comment.(¬€ßæ8ÑôìÇê1J$63be3a0c-45e7-4990-870d-b4994dd1cccd
-u
-java:S1135Q"2Complete the task associated to this TODO comment.(¶‘”ë8ÑôìÇê1J$118cddd7-d4d9-4a5f-a889-3f043ac84ed2
-m	java:S106`"+Replace this use of System.out by a logger.(¯—©‡8ÒôìÇê1J$31437f35-9067-47dc-960b-c9ee38cf13d8
-m	java:S106q"+Replace this use of System.out by a logger.(‚é›ò8ÓôìÇê1J$49036877-91c4-4621-8c28-00fad1ebdb8c
-r	java:S106t"+Replace this use of System.out by a logger.(óæ÷øøÿÿÿÿ8ÔôìÇê1J$9ae82009-aae2-408b-902d-62798218d536
-m	java:S106z"+Replace this use of System.out by a logger.(Ë„‡Ñ8ÔôìÇê1J$f34b1d77-7a4c-4c2b-a9db-e089bc7a6a59
-r	java:S106}"+Replace this use of System.out by a logger.(Ç¬Ğ¨ÿÿÿÿÿ8ÖôìÇê1J$b5a58b81-42ef-4ee1-95dd-dbe908da2176
-n	java:S106–"+Replace this use of System.out by a logger.(ÆÀûı8ÖôìÇê1J$566db346-51d7-4b5e-b646-83ce5b254987
-n	java:S106"+Replace this use of System.out by a logger.(ÆÀûı8×ôìÇê1J$13e0f7b7-1e42-4f9e-8fb3-bc2a5a7e74e5
-n	java:S106£"+Replace this use of System.out by a logger.(Ë„‡Ñ8á·øÇê1J$13ac4e2f-7845-4a82-ad7e-622c59dd44ed
-s	java:S106¦"+Replace this use of System.out by a logger.(Ç¬Ğ¨ÿÿÿÿÿ8äŠ†Èê1J$6a1617e8-8a19-405e-a021-39d0f7c45391
-w
-java:S1068"4Remove this unused "totalElapsedTime" private field.(’äš8ÚôìÇê1J$82cad511-a6d6-445a-a2bc-67fd5400af77
-w
-java:S1068"4Remove this unused "totalProcessTime" private field.(ÀÁ“ã8‹¸‰Èê1J$8546a94b-5a69-4a27-bd9e-aa9f44b1eea2
+g	java:S112\"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8·´¡Éê1
+f
+java:S1192l"IDefine a constant instead of duplicating this literal "Process " 4 times.(‚é›ò8¸´¡Éê1
+i
+java:S1223"LRename this method to prevent any misunderstanding or make it a constructor.(Î›’Ì8¹´¡Éê1
+D
+java:S2189A""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8ù´¡Éê1
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î›’Ì8ı´¡Éê1
+G	java:S106,"+Replace this use of System.out by a logger.(ÆÒŠø8µ¡Éê1
+{
+java:S2142:"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8‚µ¡Éê1
+G	java:S106E"+Replace this use of System.out by a logger.(¥†æ8ƒµ¡Éê1
+O
+java:S1135G"2Complete the task associated to this TODO comment.(¬€ßæ8ƒµ¡Éê1
+O
+java:S1135L"2Complete the task associated to this TODO comment.(¶‘”ë8ƒµ¡Éê1
+G	java:S106["+Replace this use of System.out by a logger.(¯—©‡8ƒµ¡Éê1
+G	java:S106l"+Replace this use of System.out by a logger.(‚é›ò8…µ¡Éê1
+L	java:S106o"+Replace this use of System.out by a logger.(óæ÷øøÿÿÿÿ8…µ¡Éê1
+L	java:S106u"+Replace this use of System.out by a logger.(òÕ­ÿÿÿÿÿ8†µ¡Éê1
+L	java:S106x"+Replace this use of System.out by a logger.(Ç¬Ğ¨ÿÿÿÿÿ8†µ¡Éê1
+H	java:S106"+Replace this use of System.out by a logger.(ÆÀûı8ˆµ¡Éê1
+H	java:S106—"+Replace this use of System.out by a logger.(¥³Ü8‡µ¡Éê1
+H	java:S106˜"+Replace this use of System.out by a logger.(ÆÀûı8‰µ¡Éê1
+M	java:S106"+Replace this use of System.out by a logger.(òÕ­ÿÿÿÿÿ8‰µ¡Éê1
+M	java:S106Ÿ"+Replace this use of System.out by a logger.(àö­üÿÿÿÿ8Æå¨Éê1
+M	java:S106¢"+Replace this use of System.out by a logger.(Ç¬Ğ¨ÿÿÿÿÿ8Çå¨Éê1
+Q
+java:S1068"4Remove this unused "totalElapsedTime" private field.(’äš8Šµ¡Éê1
