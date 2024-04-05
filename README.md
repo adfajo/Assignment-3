@@ -2,21 +2,26 @@
 
 ## How to run
 In this project the client-server model is used. The server runs the two different scheduling algorithms; 
-preemptive priority scheduling and FIFO scheduling. The client's job is to send processes to the server.
+preemptive priority scheduling and FIFO scheduling. The client's job is to send a process to the server.
 
 ### 1. Choose Scheduling Algorithm
 Inside the 'Server' class, you can choose which scheduling algorithm to use by changing the 'schedulingAlgorithm' 
 variable. The variable can be set to either preemptive priority scheduling (1) or FIFO scheduling (2).
 
-### 2. Start the server
+### 2. Configure the Main class
+In the 'Main' class, you can configure multiple parameters to choose how many processes to send to the server,
+the maximum burst time, the maximum priority and the max delay on when the processes are sent.
+
+### 3. Start the server
 The server needs to be started before the client. Run the main method in the 'Server' class.
 
-### 3. Start the UserRunner
-HER SKAL DET STÅ HVA USERRUNNER GJØR!
+### 4. Start the Main class
+Run the main method in the 'Main' class. This will send processes to the server according to the configuration
+done in step 2.
 
-### 4. Results
+### 5. Results
 The results of the scheduling algorithms are printed in the server console. Including the average waiting time and turn
-around time.
+around time. They are printed each time a process finishes.
 
 
 ## Theory

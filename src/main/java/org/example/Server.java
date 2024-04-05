@@ -14,7 +14,10 @@ public class Server {
   private ArrayList<Process> clientSockets;
   private ExecutorService scheduler;
   private int currentTime;
-  private int schedulingType;
+  //Scheduling types:
+  // 1 = Preemptive Priority Scheduling,
+  // 2 = First Come First Serve.
+  private final int schedulingType = 2;
   private long totalTurnAroundTime;
   private int processCount;
   private long totalWaitingTime;
@@ -25,10 +28,6 @@ public class Server {
       this.serverSocket = new ServerSocket(port);
       this.clientSockets = new ArrayList<>();
       this.scheduler = Executors.newSingleThreadExecutor();
-      //Scheduling types:
-      // 1 = Preemptive Priority Scheduling,
-      // 2 = First Come First Serve.
-      this.schedulingType = 2;
       currentTime = 0;
     } catch (IOException e) {
       e.printStackTrace();
