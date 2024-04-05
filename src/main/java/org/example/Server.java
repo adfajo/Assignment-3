@@ -1,7 +1,6 @@
 package org.example;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.*;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
@@ -19,19 +18,17 @@ public class Server {
   private long totalTurnAroundTime;
   private int processCount;
   private long totalWaitingTime;
-  private PrintWriter writer;
 
   //Constructor to initialize the server socket and client socket list
   public void Server(int port) {
     try {
       this.serverSocket = new ServerSocket(port);
       this.clientSockets = new ArrayList<>();
-      this.writer = new PrintWriter(System.out);
       this.scheduler = Executors.newSingleThreadExecutor();
       //Scheduling types:
       // 1 = Preemptive Priority Scheduling,
       // 2 = First Come First Serve.
-      this.schedulingType = 1;
+      this.schedulingType = 2;
       currentTime = 0;
     } catch (IOException e) {
       e.printStackTrace();
@@ -46,9 +43,9 @@ public class Server {
     // Priority scheduling in a separate thread to ensure constant running of method
     scheduler.submit(() -> {
       while (true) {
-        if(this.schedulingType == 1){
+        if (this.schedulingType == 1) {
           priorityScheduling();
-        }else if(this.schedulingType == 2){
+        } else if (this.schedulingType == 2) {
           this.fifoScheduling();
         }
         currentTime++;
@@ -68,7 +65,7 @@ public class Server {
         System.out.println("Process added: " + clientSocket.getInetAddress());
 
         // Add the client socket to the list and start a new thread to handle the client
-        clientSockets.add(clientHandler.handleClient(clientSocket,currentTime));
+        clientSockets.add(clientHandler.handleClient(clientSocket, currentTime));
 
         // Closing the connection to allow for further requests
         clientSocket.close();
@@ -83,27 +80,31 @@ public class Server {
   private void fifoScheduling() {
     ArrayList<Process> queue = new ArrayList<>();
 
-    for(Process process : clientSockets){
-      if(process.getArrivalTime() <= currentTime && process.getRemainingTime() > 0) {
+    for (Process process : clientSockets) {
+      if (process.getArrivalTime() <= currentTime && process.getRemainingTime() > 0) {
         queue.add(process);
       }
     }
 
-    if(!queue.isEmpty()){
+    if (!queue.isEmpty()) {
       Process runningProcess = queue.get(0);
-        System.out.println("Process " + runningProcess.getId() + " is running at time " + currentTime);
-        runningProcess.setRemainingTime(runningProcess.getRemainingTime() - 1);
-        if(runningProcess.getRemainingTime() == 0){
-          System.out.println("Process " + runningProcess.getId() + " completed at time " + (currentTime + 1));
-          clientSockets.remove(runningProcess);
-          totalTurnAroundTime += currentTime - runningProcess.getArrivalTime();
-          processCount++;
+      runningProcess.setRemainingTime(runningProcess.getRemainingTime() - 1);
 
-          //Print the average waiting time
-          System.out.println("Average waiting time is: " + getAverageWaitingTime());
-        }
-    } else{
-        System.out.println("CPU is idle at time " + currentTime);
+      if (runningProcess.getRemainingTime() == 0) {
+        System.out.println("Process " + runningProcess.getId() + " completed at time " + (currentTime + 1));
+        clientSockets.remove(runningProcess);
+        totalTurnAroundTime += (currentTime - runningProcess.getArrivalTime());
+        processCount++;
+
+        //Print the average waiting time
+        System.out.println("Average waiting time is: " + getAverageWaitingTime());
+        System.out.println("Average turnaround time is: " + getAverageTurnaroundTime());
+      }
+      System.out.println("Process " + runningProcess.getId() + " is running at time " + currentTime);
+
+        totalWaitingTime += clientSockets.size() - 1;
+    } else {
+      System.out.println("CPU is idle at time " + currentTime);
     }
   }
 
@@ -141,11 +142,11 @@ public class Server {
       }
 
       System.out.println(
-          "Process " + runningProcess.getId() + " is running at time " + currentTime);
+              "Process " + runningProcess.getId() + " is running at time " + currentTime);
 
       totalWaitingTime += clientSockets.size() - 1;
 
-        // Remove the process if it is completed
+      // Remove the process if it is completed
 
     } else {
       System.out.println("CPU is idle at time " + currentTime);
@@ -157,11 +158,7 @@ public class Server {
   }
 
 
-  public double getAverageWaitingTime(){
+  public double getAverageWaitingTime() {
     return (double) totalWaitingTime / processCount;
-  }
-
-  public void setSchedulingType(int schedulingType){
-    this.schedulingType = schedulingType;
   }
 }

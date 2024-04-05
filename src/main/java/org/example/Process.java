@@ -1,7 +1,5 @@
 package org.example;
 
-import java.io.PrintWriter;
-
 /**
  * Class describing a process which includes an id, it´s
  * arrivalTime,
@@ -44,14 +42,6 @@ public class Process implements Comparable<Process> {
         return this.arrivalTime;
     }
 
-    /**
-     * Getter method for burstTime attribute
-     *
-     * @return - burstTime
-     */
-    public int getBurstTime() {
-        return this.burstTime;
-    }
 
     /**
      * Getter method for priority attribute
@@ -85,9 +75,6 @@ public class Process implements Comparable<Process> {
         return this.remainingTime = remainingTime;
     }
 
-    public void setArrivalTime(int arrivalTime){
-        this.arrivalTime = arrivalTime;
-    }
 
     @Override
     public int compareTo(Process other) {
