@@ -96,7 +96,7 @@ public class Server {
       if (runningProcess.getRemainingTime() == 0) {
         System.out.println("Process " + runningProcess.getId() + " completed at time " + (currentTime + 1));
         clientSockets.remove(runningProcess);
-        totalTurnAroundTime += (currentTime - runningProcess.getArrivalTime());
+        totalTurnAroundTime += (currentTime - runningProcess.getArrivalTime() + 1);
         processCount++;
 
         //Print the average waiting time
@@ -141,7 +141,7 @@ public class Server {
         System.out.println(
                 "Process " + runningProcess.getId() + " completed at time " + (currentTime));
         clientSockets.remove(runningProcess);
-        totalTurnAroundTime += (currentTime - runningProcess.getArrivalTime());
+        totalTurnAroundTime += (currentTime - runningProcess.getArrivalTime() + 1);
         processCount++;
 
         System.out.println("Average waiting time is: " + getAverageWaitingTime());
