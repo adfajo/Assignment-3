@@ -35,6 +35,22 @@ preempted. If there are two processes with the same priority, the process that a
 In a FIFO scheduling algorithm, the process that arrives first is selected for execution. 
 Once that process is finished, the next process that arrived is selected.
 
+### Arrival Time
+The arrival time represents the time at which a process has arrived in an ongoing system.
+
+### Burst Time
+The burst time represents how much time it takes to execute a process.
+
+### Priority
+The priority represents the importance of a process. The higher the priority, the more important the process is.
+
+### Turnaround Time
+The turnaround time represents the total time a process has been in the system, including waiting time.
+Turnaround time is calculated by subtracting the arrival time from the completion time.
+
+### Waiting Time
+The waiting time represents how long a process has been waiting in queue. It is calculated by subtracting the
+arrival time from the turnaround time.
 
 ## Contributors
 - Adrian Johansen
