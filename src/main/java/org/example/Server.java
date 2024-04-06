@@ -17,7 +17,7 @@ public class Server {
   //Scheduling types:
   // 1 = Preemptive Priority Scheduling,
   // 2 = First in First Out Scheduling.
-  private final int schedulingType = 2;
+  private final int schedulingType = 1;
   private long totalTurnAroundTime;
   private int processCount;
   private long totalWaitingTime;
@@ -89,6 +89,10 @@ public class Server {
       Process runningProcess = queue.get(0);
       runningProcess.setRemainingTime(runningProcess.getRemainingTime() - 1);
 
+      if(clientSockets.size() - 1 > 0){
+        totalWaitingTime += clientSockets.size() - 1;
+      }
+
       if (runningProcess.getRemainingTime() == 0) {
         System.out.println("Process " + runningProcess.getId() + " completed at time " + (currentTime + 1));
         clientSockets.remove(runningProcess);
@@ -129,6 +133,10 @@ public class Server {
       Process runningProcess = queue.poll();
       runningProcess.setRemainingTime(runningProcess.getRemainingTime() - 1);
 
+      if(clientSockets.size() - 1 > 0){
+        totalWaitingTime += clientSockets.size() - 1;
+      }
+
       if (runningProcess.getRemainingTime() == 0) {
         System.out.println(
                 "Process " + runningProcess.getId() + " completed at time " + (currentTime));
@@ -158,6 +166,11 @@ public class Server {
 
 
   public double getAverageWaitingTime() {
-    return (double) totalWaitingTime / processCount;
+    if (totalWaitingTime < 0) {
+      return 0.0;
+    }else{
+      return (double) totalWaitingTime / processCount;
+    }
   }
+
 }

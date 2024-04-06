@@ -13,7 +13,7 @@ public class Main {
         // Time is randomized between 1 and maxDelay seconds.
         int maxDelay = 6;
         // Max burst time and priority.
-        int maxBurstTime = 10;
+        int maxBurstTime = 2;
         int maxPriority = 10;
 
         while (requestAmount != 0){
