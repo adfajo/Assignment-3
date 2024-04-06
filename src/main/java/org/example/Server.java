@@ -16,7 +16,7 @@ public class Server {
   private int currentTime;
   //Scheduling types:
   // 1 = Preemptive Priority Scheduling,
-  // 2 = First Come First Serve.
+  // 2 = First in First Out Scheduling.
   private final int schedulingType = 2;
   private long totalTurnAroundTime;
   private int processCount;
